@@ -1,14 +1,14 @@
 var template = {}
 
-function preloadEjsTemplate(name, link) {
-  fetch(link)
+function preloadEjsTemplate() {
+  fetch('/views/components/people.ejs')
     .then(response => response.text())
     .then(response => {
       template = {
         ...template,
-        [name]: response
+        'people': response
       }
-      console.debug('Template loaded:', name)
+      console.debug('Template loaded:', 'people')
     })
     .catch(console.error)
 }
@@ -43,16 +43,12 @@ function onNumberChange(amount) {
     .catch(console.error)
 }
 
-// preload ejs templates for client-side rendering
-document.querySelectorAll('link[type="text/ejs"]')
-  .forEach(node => node.addEventListener('load', event => {
-    const { href, dataset: { name } } = event.currentTarget ?? {}
-    preloadEjsTemplate(name, href)
-  }))
-
 // register change event listener for amount input
 document.querySelector('input[name=amount]')
   .addEventListener('input', (event) => onNumberChange(event.currentTarget.value))
 
+// preload ejs templates for client-side rendering
+preloadEjsTemplate()
+
 // update number input on page load
-document.addEventListener('DOMContentLoaded', updateNumberInput)
+updateNumberInput()
