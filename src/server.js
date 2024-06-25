@@ -17,6 +17,7 @@ app.set('view options', { root: path.join(__dirname, 'views') })
 app.set('views', path.join(__dirname, 'views'))
 
 app.use(router)
+app.use('/views', express.static(path.join(__dirname, 'views')))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(process.env.PORT ?? 3000)

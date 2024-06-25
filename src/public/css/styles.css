@@ -106,6 +106,7 @@ footer {
   opacity: .3;
   transform: translateY(-10%);
   animation: fade-in .5s forwards;
+  animation-delay: var(--animation-delay);
 }
 
 .person span {
@@ -164,7 +165,7 @@ footer {
 
 @keyframes fade-in {
   from {
-    opacity: .3;
+    opacity: .5;
     transform: translateY(-10%);
   }
   to {

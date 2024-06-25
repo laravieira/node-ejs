@@ -1,0 +1,16 @@
+<% people?.forEach(person => { %>
+    <div class="person" style="--animation-delay: <%= 50 * person.id %>ms;">
+        <span><%= person.id %></span>
+        <img src="<%= person.avatar %>" alt="<%= person.name %>">
+        <div>
+            <h3><%= person.name %></h3>
+            <p><%= person.job %></p>
+            <p><%= person.email %></p>
+        </div>
+    </div>
+<% }) %>
+<% if(!people.length) { %>
+    <div class="empty">
+        <h2>There is none.</h2>
+    </div>
+<% } %>

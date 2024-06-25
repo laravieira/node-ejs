@@ -4,32 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="prefetch" blocking="render" href="/views/components/people.ejs" type="text/ejs" data-name="people">
 </head>
 <body>
     <%- include('components/header') %>
     <%- include('components/aside') %>
+
     <main id="people">
-        <% people?.forEach(person => { %>
-            <div class="person">
-                <span><%= person.id %></span>
-                <img src="<%= person.avatar %>" alt="<%= person.name %>">
-                <div>
-                    <h3><%= person.name %></h3>
-                    <p><%= person.job %></p>
-                    <p><%= person.email %></p>
-                </div>
-            </div>
-        <% }) %>
-        <% if(!people.length) { %>
-            <div class="empty">
-                <h2>There is none.</h2>
-            </div>
-        <% } %>
+        <%- include('components/people') %>
     </main>
+
     <%- include('components/footer') %>
 
-    <script src="/scripts.js" type="application/javascript"></script>
+    <script src="/js/ejs.min.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="application/javascript"></script>
 </body>
 </html>
