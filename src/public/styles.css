@@ -7,6 +7,10 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
+html {
+  background-color: #E5E1D8;
+}
+
 body {
   display: grid;
   grid-template-areas:
@@ -20,7 +24,6 @@ body {
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #E5E1D8;
 }
 
 header {
