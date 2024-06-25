@@ -20,6 +20,6 @@ A simple display items by a counter using Node.js and EJS template engine.
 3. Visit `http://localhost:3000/`
 
 ## Screenshots
-![Screenshot](/src/public/app-desktop.jpeg)
-![Screenshot](/src/public/app-mobile.jpeg)
+![Screenshot](/src/public/img/app-desktop.jpeg)
+![Screenshot](/src/public/img/app-mobile.jpeg)
 
